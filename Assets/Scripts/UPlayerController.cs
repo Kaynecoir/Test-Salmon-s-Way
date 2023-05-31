@@ -5,16 +5,17 @@ using UnityEngine;
 public class UPlayerController : MonoBehaviour
 {
     public float maxSpeed;
+    public Vector3 mousePos;
+    public Vector3 velocity;
 
     [SerializeField]
+    private GameObject Player;
+    [SerializeField]
     private GameObject Arrow;
-    [SerializeField]
-    private Vector3 mousePos;
-    [SerializeField]
-    private Quaternion angle;
     private CharacterController charControll;
     void Start()
     {
+        Player = gameObject;
         charControll = this.GetComponent<CharacterController>();
     }
 
@@ -22,14 +23,14 @@ public class UPlayerController : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        Vector3 velocity = new Vector3(horizontal, 0.0f, vertical).normalized * maxSpeed;
+        velocity = new Vector3(horizontal, 0.0f, vertical).normalized * maxSpeed;
 
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - Player.transform.position;
         mousePos.y = 0.0f;
 
         Arrow.transform.right = mousePos;
 
-        this.transform.position += velocity * Time.deltaTime;
+        Player.transform.position += velocity * Time.deltaTime;
 
 
     }

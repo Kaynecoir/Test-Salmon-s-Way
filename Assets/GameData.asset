@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2d8b0c89c3236499058bce537e5cc9, type: 3}
+  m_Name: GameData
+  m_EditorClassIdentifier: 
+  playerSpeed: 5
+  botSpeed: 3
+  botWaitTime: 2
+  safeRadius: 1
+  messageWaitSec: 5
+  message: 'Count of Bot: '
